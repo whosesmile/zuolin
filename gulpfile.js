@@ -4,7 +4,7 @@ var watch = require('gulp-watch');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var sequence = require('run-sequence');
-// var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var html2js = require('gulp-ng-html2js');
 var htmlmin = require('gulp-minify-html');
@@ -13,7 +13,7 @@ var htmlmin = require('gulp-minify-html');
 var target = '.tmp/';
 
 /**
- * clean tmp and dist
+ * clean .tmp and dist
  */
 gulp.task('clean', function () {
   return gulp.src(['.tmp', 'dist'], {
@@ -22,7 +22,7 @@ gulp.task('clean', function () {
 });
 
 /**
- * sync app to tmp
+ * sync app to .tmp
  */
 gulp.task('sync', function () {
   return gulp.src(['src/assets/**/*', 'src/*.*'], {
@@ -77,5 +77,5 @@ gulp.task('connect', function () {
  *  Default task clean temporaries directories and launch the main optimization build task
  */
 gulp.task('default', function () {
-  sequence('clean', ['sync', 'html2js', 'concat'], 'connect', 'watch');
+  sequence('clean', ['sync', 'html2js', 'concat'], ['connect', 'watch']);
 });
