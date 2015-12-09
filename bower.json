@@ -1,0 +1,15 @@
+{
+  "name": "zuolin",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.4.2",
+    "restangular": "~1.5.1",
+    "angular-toastr": "~1.5.0",
+    "angular-ui-router": "~0.2.15",
+    "jquery": "~2.1.4",
+    "angular-material": "~0.11.4"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.2"
+  }
+}
